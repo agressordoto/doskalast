@@ -1,0 +1,312 @@
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: bisque;
+}
+body {
+    background-image: url("/images/regd.jpg");
+}
+/*убираем подчеркивания текста*/
+a {
+    text-decoration: none;
+    color: inherit; /*наследует цвет текста для Главная, чат и т.д*/
+}
+input{ /*чтоб по 10 раз не писать для каждого поста*/
+    padding: 10px 12px;
+    display: block;
+    width: 100%;
+    border-radius: 4px; /*скруглим*/
+    border: 1px solid; /*жирность рамки*/
+    line-height: 1.5rem; /*высота поиска*/
+    color: #444444; /*цвет вводимого текста в поле и обрамления*/
+    font-size: 1rem; /*размер текста*/
+}
+/*HEADER - наша шапка*/
+header{
+    background-image: url("images/regd.jpg");
+    height: 66px;
+}
+header h1{ /*логотип "мой сайт"*/
+    margin-top: 5px; /*верх и вниз*/
+    margin-left: -100px; /*Влево*/
+    color: bisque;
+    font-family: 'Press Start 2P', cursive; /*квадратный шрифт*/
+}
+header h1 a:hover{ /*логотип "мой сайт", чтобы при наведении курсора не менялся цвет*/
+    color: rgb(252, 199, 135);
+}
+header ul{
+    margin: 0 none;
+    list-style-type: none; /* убрать точки у текста*/
+}
+header ul li{ /*поворачиваем текст горизонтально*/
+    float: right;
+    position: relative;
+    color: bisque;
+    font-family: 'Oswald', sans-serif;
+}
+header ul li a:hover{ /*меняем цвет при наведении у текста*/
+    color: rgb(253, 205, 146);
+}
+header ul li a{
+    display: block; /*блочная форма текста*/
+    font-size: 1.1rem; /*размер кнопок*/
+    text-decoration: none;
+    padding: 20px; /*удаленность между текстом*/
+    text-align: left; /*текст по центру кнопки*/
+}
+header ul li a:hover{ /*при наведении на кнопки она меняет цвет*/
+    background: rgb(252, 236, 214);
+    transition: 0.5s; /*время появления цвета рамки*/
+    color: rgb(255, 150, 21); /*время появления цвета текста*/
+}
+header ul li ul{    
+    position: absolute; /*Тема 1 и Тема 2 друг под другом*/ 
+    top: 66px; /*отдалить по вертикали*/
+    right: 0px; /*сдвинуть левее (хз почему не вправо)*/   
+    width: 131%;  /*вытянуть кнопку по горизонтали(ширина)*/
+    display: none; /*отключаем видимость кнокпи(это нужно для того, чтоб когда мы наводили курсор на Форум, то появлялись темы)*/
+    z-index: 111; /*определяет порядок наложения(элементы с большим z-index перекрывают элементы с меньшим)*/
+}
+header ul li:hover ul{ /*hover только для тех li, в которых имеется ul*/
+    display: block; /*при наведении курсора на Форум появляются Тема 1 и Тема2*/
+    
+}
+header ul li ul li{ /*Кнопки Тема 1 и Тема 2 одинакового размера + прозрачный пункт*/
+    width: 100%;
+    opacity: 0.7;
+}
+header ul li ul:hover li{ /*При наведении пункт становится непрозрачным*/
+    opacity: 1;
+}
+header ul li ul li a{
+    padding: 5px; /*размер границ Тема 1 и Тема 2*/
+    background: gray;
+}
+/*SLIDER - наши картинки(карусель)*/
+.carousel{
+    height: 350px; 
+}
+.carousel-inner, .carousel-item{ /*адаптируем размеры рамки под картинки*/
+    border-radius: 8px; /*скруглить края*/
+    height: 350px;
+   /* object-fit: cover; /*обрезаем картинку внутри контейнера*/
+    /*object-position: 5em 5.5em; /*выравниваем картинки в контейнере*/
+}
+.carousel-caption h5{
+    font-size: 3rem; /*размер букв*/
+    font-weight: 500; /*жирность букв*/
+    background: #312929;    
+    max-width: 100%;
+    padding: 0.05em; /*граница сверху*/
+    opacity: 0.5;
+    text-align: center; /*текст по центру*/
+    padding-bottom: 0.7rem; /*отступ текста от границы кнопки (снизу)*/
+}
+.carousel-caption h5 a{
+    color: bisque;
+    text-decoration: none;
+    font-weight: 500;
+}
+.carousel-caption h5 a:hover{
+    color: red;
+}
+/*main start*/
+.main-content h2{
+    margin: 15px 0; /*отступ "последние публикации" сверху и снизу*/
+}
+.main-content .post{
+    margin-bottom: 30px; /*отступ между постами*/
+}
+.main-content .post_text{
+    background: gray; /*делаем background для текста*/
+    padding: 6px; /*размер окна*/
+    border-radius: 4px; /*скругляем края*/
+}
+.main-content .post_text h3{
+    font-size: 25px; /*для "последние публикации" делаем меньше шрифт*/
+}
+.main-content .post_text h3 a:hover{
+    text-decoration: underline; /*при наведении на статью - подчеркиваем*/
+    color: #6d5050;
+}
+.main-content .post_text i{
+    margin-right: 14px; /*отступ для даты вправо*/
+}
+/*main end*/
+/*sidebar*/
+.sidebar .section h3{
+    font-size: 20px; /*Поиск по публикациям*/
+}
+.search{
+    margin-top: 68px; /*отступ для поиска*/
+}
+.sidebar .section{
+    background: gray; /*белый фон для поиска и категорий*/
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+.sidebar .topics ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none; /*убираем точки у категорий*/
+    border-top: 1px solid bisque; /*серая линия между категориями и поиском*/
+}
+.sidebar .topics ul li a{
+    display: block; /*для каждой подкатегории будем добавлять отступ и серую линию*/
+    padding: 15px 0px 15px 0px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-weight: 500; /*жирнее подкатегории*/
+    color: bisque; /*отключаем синий цвет при наведении на подкатегорию*/
+    font-size: 1em;
+}
+.sidebar .topics ul li a:hover{ /*анимация при наведении на подкатегории*/
+    padding-left: 10px;
+    transition: all 0.3s;
+}
+/*footer*/
+.footer{ /*нижняя полоска*/
+    background: #303036;
+    position: relative;
+    color: #d3d3d3;
+}
+.footer .footer-section{
+    padding: 35px; /*отступ текста от верхнего края серой полоски*/
+} 
+.footer h4, .footer h3{ /*Главные буквы в серой полоске*/
+    color: white;
+}
+.footer .about .contact span{
+    display: block;
+    font-size: 1.1em; /*размер номера и мыла*/
+    margin-bottom: 8px;
+}
+.footer .about .socials a{
+    border: 1px solid gray;
+    width: 45px; /*размеры квадратиков*/
+    height: 41px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block; /*квадратики с контактами*/
+    font-size: 1.3em;
+    border-radius: 5px; /*скругляем*/
+    transition: all .3s;
+    color: bisque;
+}
+.footer .about .socials a:hover{ /*анимация при наведении на иконки*/
+    border: 1px solid white;
+    color: white;
+    transition: all .3s;
+}
+.footer .links ul a{ /*"наши ссылки"*/
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    transition: all .3s;
+    color: #ffffff;
+    text-decoration: none;
+}
+.footer .links ul a:hover{ /*Анимация для "наши ссылки"*/
+    color: white;
+    margin-left: 15px; /*сдвиг на 15 пикселей*/
+    transition: all .3s; /*скорость анимации*/
+}
+.footer .contact-form .contact-input{ /*внешний вид полей "контакты"*/
+    background: #272727; /*делаем серый back для ваши сообщения и мыло*/
+    color: #bebdbd; /*белый текст при вводе*/
+    margin-bottom: 10px;
+    line-height: 1.5rem; /*размер полей*/
+    padding: .9rem 1.4rem;
+    border: none;
+    width: 100%; /*шоб поле для сообщения было на всю ширину*/
+}
+.footer .contact-form .contact-input:focus{ /*при нажатии на поле оно будет темнеть(менять цвет)*/
+    background: #1a1a1a;
+}
+.footer .contact-form .contact-btn{ /*переносим выше кнопку "отправить"*/
+    float: right;
+    font-size: 1.1em;
+    color: white; /*цвет текста*/
+    background: #1a1a1a; /*цвет кнопки*/
+    margin-bottom: 12px; /*отступ снизу для кнопки*/
+}
+.footer .footer-bottom{ /*оформляем нижнюю строчку(полоску) где Designet by Denis*/
+    background: #343a40;
+    color: #686868;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    position: absolute; /*тк у родителя .footer есть позиционирование, то можно задать свою позицию*/
+    bottom: 0px;
+    left: 0px;
+    padding-top: 0px;
+}
+/* SINGLE_POST (дата и автор и текст у single поста) */
+.single_post{ /*отступ текста от подвала (нижей шапки) */
+    margin-bottom: 30px;
+}
+.single_post .single_info_post{ /*автор и дата у single поста*/
+    margin: 20px 0; /*сверху и снизу 20 пкс */ 
+}
+.single_post .single_info_post i{ /*а   втор и дата у single поста*/
+    display: inline-block; /*делим на блоки*/
+    margin-right: 20px; 
+}
+/*FORMA registr*/
+.regist_form{ /*отступ формы регистрации от подвала */
+    margin-bottom: 50px;
+}
+.regist_form h2{
+    text-align: center; /*делаем по центру*/
+    margin: 30px 0; /*сверху и снизу 30пкс, по сторонам 0 (Регистрация)*/
+}
+.regist_form input { /*правило, которое делает поля регистрации шире*/
+    height: 3rem;
+}
+.regist_form a{ /*кнопка (у меня есть аккаунт)*/
+    font-size: 1em;
+    transition: all .1s;
+    text-decoration: none;
+    margin-left: 89px;
+    color: bisque;
+}
+.regist_form a:hover{ /*шоб при наведении кнопка загоралась красным*/
+    transition: all .2s;
+    color: red;
+}
+/*FORMA autorise*/
+.authorise_form{ /*отступ формы авторизации от подвала */
+    margin-bottom: 50px;
+}
+.authorise_form h2{
+    text-align: center; /*делаем по центру*/
+    margin: 30px 0; /*сверху и снизу 30пкс, по сторонам 0 (Авторизация)*/
+}
+.authorise_form input { /*правило, которое делает поля авторизации шире*/
+    height: 3rem;
+}
+.authorise_form a{ /*кнопка (у меня нет аккаунта)*/
+    font-size: 1em;
+    transition: all .1s;
+    text-decoration: none;
+    margin-left: 87px;
+    color: bisque;
+}
+.authorise_form a:hover{ /*шоб при наведении кнопка загоралась красным*/
+    transition: all .2s;
+    color: red;
+}.form-text, .form-label{
+    color: bisque;
+}
+/*forms*/
+form div.err{
+    color:red;
+}
